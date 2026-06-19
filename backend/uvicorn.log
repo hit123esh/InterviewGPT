@@ -1,0 +1,79 @@
+/Users/hiteshumesh/Desktop/ai-interviewer/backend/venv/lib/python3.9/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/hiteshumesh/Desktop/ai-interviewer/backend/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/hiteshumesh/Desktop/ai-interviewer/backend/venv/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/hiteshumesh/Desktop/ai-interviewer/backend/venv/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+INFO:     Started server process [61952]
+INFO:     Waiting for application startup.
+2026-06-19 16:52:43,130 | main | INFO | 🚀 Starting InterviewGPT API...
+2026-06-19 16:52:43,159 INFO sqlalchemy.engine.Engine select pg_catalog.version()
+2026-06-19 16:52:43,159 | sqlalchemy.engine.Engine | INFO | select pg_catalog.version()
+2026-06-19 16:52:43,159 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-06-19 16:52:43,159 | sqlalchemy.engine.Engine | INFO | [raw sql] ()
+2026-06-19 16:52:43,161 INFO sqlalchemy.engine.Engine select current_schema()
+2026-06-19 16:52:43,161 | sqlalchemy.engine.Engine | INFO | select current_schema()
+2026-06-19 16:52:43,161 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-06-19 16:52:43,161 | sqlalchemy.engine.Engine | INFO | [raw sql] ()
+2026-06-19 16:52:43,163 INFO sqlalchemy.engine.Engine show standard_conforming_strings
+2026-06-19 16:52:43,163 | sqlalchemy.engine.Engine | INFO | show standard_conforming_strings
+2026-06-19 16:52:43,163 INFO sqlalchemy.engine.Engine [raw sql] ()
+2026-06-19 16:52:43,163 | sqlalchemy.engine.Engine | INFO | [raw sql] ()
+2026-06-19 16:52:43,164 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-06-19 16:52:43,164 | sqlalchemy.engine.Engine | INFO | BEGIN (implicit)
+2026-06-19 16:52:43,166 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,166 | sqlalchemy.engine.Engine | INFO | SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,166 INFO sqlalchemy.engine.Engine [generated in 0.00010s] ('users', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,166 | sqlalchemy.engine.Engine | INFO | [generated in 0.00010s] ('users', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,169 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,169 | sqlalchemy.engine.Engine | INFO | SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,169 INFO sqlalchemy.engine.Engine [cached since 0.003466s ago] ('resumes', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,169 | sqlalchemy.engine.Engine | INFO | [cached since 0.003466s ago] ('resumes', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,170 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,170 | sqlalchemy.engine.Engine | INFO | SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,170 INFO sqlalchemy.engine.Engine [cached since 0.004155s ago] ('interviews', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,170 | sqlalchemy.engine.Engine | INFO | [cached since 0.004155s ago] ('interviews', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,170 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,170 | sqlalchemy.engine.Engine | INFO | SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,170 INFO sqlalchemy.engine.Engine [cached since 0.004766s ago] ('interview_questions', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,170 | sqlalchemy.engine.Engine | INFO | [cached since 0.004766s ago] ('interview_questions', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,171 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,171 | sqlalchemy.engine.Engine | INFO | SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,171 INFO sqlalchemy.engine.Engine [cached since 0.005367s ago] ('reports', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,171 | sqlalchemy.engine.Engine | INFO | [cached since 0.005367s ago] ('reports', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,171 INFO sqlalchemy.engine.Engine SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,171 | sqlalchemy.engine.Engine | INFO | SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2026-06-19 16:52:43,171 INFO sqlalchemy.engine.Engine [cached since 0.005954s ago] ('coding_submissions', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,171 | sqlalchemy.engine.Engine | INFO | [cached since 0.005954s ago] ('coding_submissions', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2026-06-19 16:52:43,172 INFO sqlalchemy.engine.Engine COMMIT
+2026-06-19 16:52:43,172 | sqlalchemy.engine.Engine | INFO | COMMIT
+2026-06-19 16:52:43,173 | main | INFO | ✅ Database initialized
+2026-06-19 16:52:43,173 | main | INFO | ✅ InterviewGPT API is ready
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)

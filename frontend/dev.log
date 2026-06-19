@@ -1,0 +1,93 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.113:3000
+- Environments: .env.local
+✓ Ready in 310ms
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/hiteshumesh/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/hiteshumesh/Desktop/ai-interviewer/frontend/package-lock.json
+   * /Users/hiteshumesh/Desktop/ai-interviewer/package-lock.json
+
+
+ GET /register 200 in 397ms (next.js: 144ms, application-code: 253ms)
+ GET /dashboard 200 in 66ms (next.js: 37ms, application-code: 30ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /register 200 in 50ms (next.js: 7ms, application-code: 43ms)
+ GET /resumes 200 in 1331ms (next.js: 1313ms, application-code: 18ms)
+ GET /interviews/new 200 in 826ms (next.js: 797ms, application-code: 29ms)
+ GET /interviews/new 200 in 20ms (next.js: 5ms, application-code: 15ms)
+ GET /dashboard 200 in 122ms (next.js: 19ms, application-code: 103ms)
+ GET /settings 200 in 756ms (next.js: 730ms, application-code: 26ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /dashboard 200 in 40ms (next.js: 12ms, application-code: 28ms)
+ GET /resumes 200 in 34ms (next.js: 9ms, application-code: 25ms)
+ GET / 200 in 668ms (next.js: 344ms, application-code: 324ms)
+ GET /login 200 in 87ms (next.js: 61ms, application-code: 26ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /dashboard 200 in 44ms (next.js: 10ms, application-code: 34ms)
+ GET /resumes 200 in 55ms (next.js: 13ms, application-code: 43ms)
+○ Compiling /analytics ...
+ GET /analytics 200 in 1051ms (next.js: 974ms, application-code: 78ms)
+ GET /analytics 200 in 3.4s (next.js: 3.4s, application-code: 11ms)
+ GET /analytics 200 in 2.2s (next.js: 2.2s, application-code: 27ms)
+ GET /interviews 200 in 716ms (next.js: 670ms, application-code: 46ms)
+ GET /interviews/new 200 in 47ms (next.js: 26ms, application-code: 21ms)
+ GET /interviews/d473b211-3edf-40f4-8c84-25c6b83e339e 200 in 1098ms (next.js: 1073ms, application-code: 25ms)
+ GET /interviews/d473b211-3edf-40f4-8c84-25c6b83e339e 200 in 134ms (next.js: 30ms, application-code: 105ms)
+ GET /interviews 200 in 49ms (next.js: 19ms, application-code: 30ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /interviews/d473b211-3edf-40f4-8c84-25c6b83e339e 200 in 36ms (next.js: 14ms, application-code: 22ms)
+ GET /interviews/d473b211-3edf-40f4-8c84-25c6b83e339e 200 in 60ms (next.js: 14ms, application-code: 46ms)
+ GET /interviews/new 200 in 43ms (next.js: 13ms, application-code: 30ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /interviews/d3a8f351-05ab-4df6-980e-2e4f08cbc52b 200 in 20ms (next.js: 5ms, application-code: 15ms)
+ GET /interviews 200 in 31ms (next.js: 8ms, application-code: 23ms)
+ GET / 200 in 62ms (next.js: 11ms, application-code: 51ms)
+⚠ Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr from "127.0.0.1".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['127.0.0.1'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET /dashboard 200 in 37ms (next.js: 9ms, application-code: 28ms)
+ GET /reports 200 in 772ms (next.js: 752ms, application-code: 20ms)
+ GET /dashboard 200 in 58ms (next.js: 13ms, application-code: 44ms)
+ GET /interviews/new 200 in 98ms (next.js: 29ms, application-code: 69ms)
+ GET / 200 in 53ms (next.js: 6ms, application-code: 46ms)
+ GET /interviews 200 in 41ms (next.js: 5ms, application-code: 36ms)
+ GET /interviews/d3a8f351-05ab-4df6-980e-2e4f08cbc52b 200 in 36ms (next.js: 13ms, application-code: 22ms)
+ GET /interviews 200 in 105ms (next.js: 39ms, application-code: 66ms)
+ GET /interviews/d473b211-3edf-40f4-8c84-25c6b83e339e 200 in 35ms (next.js: 16ms, application-code: 19ms)
+ GET / 200 in 42ms (next.js: 2ms, application-code: 40ms)
+ GET / 200 in 97ms (next.js: 27ms, application-code: 71ms)
+ GET / 200 in 104ms (next.js: 33ms, application-code: 71ms)
+ GET / 200 in 112ms (next.js: 43ms, application-code: 69ms)
+ GET /interviews/d473b211-3edf-40f4-8c84-25c6b83e339e/report 200 in 1320ms (next.js: 1300ms, application-code: 20ms)
+ GET / 200 in 82ms (next.js: 30ms, application-code: 52ms)
+ GET / 200 in 85ms (next.js: 23ms, application-code: 62ms)
+ GET / 200 in 63ms (next.js: 17ms, application-code: 46ms)
+ GET / 200 in 152ms (next.js: 65ms, application-code: 87ms)
+ GET / 200 in 93ms (next.js: 25ms, application-code: 67ms)
+ GET / 200 in 323ms (next.js: 59ms, application-code: 264ms)
+ GET /login 200 in 61ms (next.js: 29ms, application-code: 33ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /dashboard 200 in 37ms (next.js: 12ms, application-code: 25ms)
+ GET /interviews/new 200 in 66ms (next.js: 36ms, application-code: 31ms)
+ GET /interviews/d94289c2-fb59-4e9f-8128-5081ca0fa77f 200 in 50ms (next.js: 32ms, application-code: 18ms)
+ GET /interviews/d94289c2-fb59-4e9f-8128-5081ca0fa77f/report 200 in 739ms (next.js: 424ms, application-code: 315ms)
+ GET /reports 200 in 535ms (next.js: 276ms, application-code: 260ms)
+ GET /interviews/d94289c2-fb59-4e9f-8128-5081ca0fa77f/report 200 in 212ms (next.js: 104ms, application-code: 108ms)
+ GET /dashboard 200 in 614ms (next.js: 261ms, application-code: 353ms)
+[?25h
