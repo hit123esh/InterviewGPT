@@ -13,18 +13,20 @@ from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 
-from config import get_settings
-from database.session import init_db
+from backend.config import get_settings
+from backend.database.session import init_db, engine
+from sqlalchemy import text
+import httpx
 
 # Import routers
-from auth.router import router as auth_router
-from users.router import router as users_router
-from resumes.router import router as resumes_router
-from interviews.router import router as interviews_router
-from analytics.router import router as analytics_router
-from reports.router import router as reports_router
-from speech.router import router as speech_router
-from admin.router import router as admin_router
+from backend.auth.router import router as auth_router
+from backend.users.router import router as users_router
+from backend.resumes.router import router as resumes_router
+from backend.interviews.router import router as interviews_router
+from backend.analytics.router import router as analytics_router
+from backend.reports.router import router as reports_router
+from backend.speech.router import router as speech_router
+from backend.admin.router import router as admin_router
 
 settings = get_settings()
 
@@ -47,6 +49,17 @@ async def lifespan(app: FastAPI):
     # Initialize database tables
     await init_db()
     logger.info("✅ Database initialized")
+    # Check Ollama connectivity if enabled
+    if settings.USE_OLLAMA:
+        try:
+            async with httpx.AsyncClient(timeout=5.0) as client:
+                resp = await client.get(settings.OLLAMA_URL.rstrip("/") + "/api/ping")
+                if resp.status_code not in (200, 204):
+                    logger.warning(f"Ollama ping returned {resp.status_code}; model calls may fail.")
+                else:
+                    logger.info("✅ Ollama server reachable")
+        except Exception:
+            logger.warning("Ollama server not reachable; falling back to mock LLM if configured.")
     
     # Create upload directory
     import os
@@ -95,6 +108,13 @@ async def global_exception_handler(request: Request, exc: Exception):
 # Health check
 @app.get("/health", tags=["Health"])
 async def health_check():
+    # Quick DB connectivity test
+    try:
+        async with engine.connect() as conn:
+            await conn.execute(text("SELECT 1"))
+    except Exception:
+        return JSONResponse(status_code=503, content={"status": "unhealthy", "detail": "Database unreachable"})
+
     return {"status": "healthy", "app": settings.APP_NAME, "version": settings.APP_VERSION}
 
 

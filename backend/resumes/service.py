@@ -10,9 +10,9 @@ import aiofiles
 from uuid import UUID
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
-from database.models import Resume
-from resumes.parser import extract_text, parse_resume_with_ai
-from config import get_settings
+from backend.database.models import Resume
+from backend.resumes.parser import extract_text, parse_resume_with_ai
+from backend.config import get_settings
 
 settings = get_settings()
 
@@ -67,7 +67,7 @@ async def process_resume(
 
     # Index in ChromaDB (async, non-blocking)
     try:
-        from rag.embeddings import index_resume
+        from backend.rag.embeddings import index_resume
         await index_resume(resume)
     except Exception as e:
         import logging

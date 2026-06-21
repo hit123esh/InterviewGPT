@@ -3,9 +3,9 @@ InterviewGPT — Speech API Router
 """
 
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException, status
-from database.models import User
-from auth.dependencies import get_current_user
-from speech.transcriber import transcribe_audio
+from backend.database.models import User
+from backend.auth.dependencies import get_current_user
+from backend.speech.transcriber import transcribe_audio
 
 router = APIRouter(prefix="/speech", tags=["Speech"])
 

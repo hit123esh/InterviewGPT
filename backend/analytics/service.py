@@ -5,7 +5,7 @@ InterviewGPT — Analytics Service
 from uuid import UUID
 from sqlalchemy import select, func, case
 from sqlalchemy.ext.asyncio import AsyncSession
-from database.models import Interview, InterviewQuestion, Report
+from backend.database.models import Interview, InterviewQuestion, Report
 
 
 async def get_dashboard_data(db: AsyncSession, user_id: UUID) -> dict:
@@ -119,7 +119,7 @@ async def _extract_skill_scores(db: AsyncSession, user_id: UUID) -> list:
 
 async def get_admin_stats(db: AsyncSession) -> dict:
     """Get platform-wide statistics for admin dashboard."""
-    from users.service import get_user_count
+    from backend.users.service import get_user_count
     
     user_count = await get_user_count(db)
     

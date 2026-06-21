@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   # PostgreSQL Database
   db:
@@ -15,12 +13,12 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-interviewgpt}"]
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-interviewgpt}" ]
       interval: 5s
       timeout: 5s
       retries: 5
 
-  # ChromaDB Vector Database
+  # ChromaDB
   chromadb:
     image: chromadb/chroma:latest
     container_name: interviewgpt-chromadb
@@ -30,8 +28,8 @@ services:
     volumes:
       - chroma_data:/chroma/chroma
     environment:
-      - IS_PERSISTENT=TRUE
-      - ANONYMIZED_TELEMETRY=FALSE
+      IS_PERSISTENT: TRUE
+      ANONYMIZED_TELEMETRY: FALSE
 
   # FastAPI Backend
   backend:
@@ -46,11 +44,22 @@ services:
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-interviewgpt}:${POSTGRES_PASSWORD:-interviewgpt_secret}@db:5432/${POSTGRES_DB:-interviewgpt}
       CHROMA_HOST: chromadb
       CHROMA_PORT: 8000
-      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
       JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-me-in-production}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      PYTHONPATH: /app
+
+      # OLLAMA
+      USE_OLLAMA: "true"
+      OLLAMA_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: llama3
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
     volumes:
-      - ./backend:/app
+      - ./backend:/app/backend
       - upload_data:/app/uploads
+
     depends_on:
       db:
         condition: service_healthy

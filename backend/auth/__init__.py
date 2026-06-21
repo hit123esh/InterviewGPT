@@ -1,4 +1,4 @@
-from auth.router import router as auth_router
-from auth.dependencies import get_current_user, get_current_admin
+from backend.auth.router import router as auth_router
+from backend.auth.dependencies import get_current_user, get_current_admin
 
 __all__ = ["auth_router", "get_current_user", "get_current_admin"]

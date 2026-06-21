@@ -5,14 +5,14 @@ InterviewGPT — Resume API Router
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from uuid import UUID
-from database import get_db
-from database.models import User
-from auth.dependencies import get_current_user
-from resumes.schemas import ResumeResponse, ResumeListResponse, ResumeDetailResponse
-from resumes.service import (
+from backend.database import get_db
+from backend.database.models import User
+from backend.auth.dependencies import get_current_user
+from backend.resumes.schemas import ResumeResponse, ResumeListResponse, ResumeDetailResponse
+from backend.resumes.service import (
     process_resume, get_user_resumes, get_resume_by_id, delete_resume
 )
-from config import get_settings
+from backend.config import get_settings
 
 settings = get_settings()
 router = APIRouter(prefix="/resumes", tags=["Resumes"])

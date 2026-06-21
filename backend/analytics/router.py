@@ -4,10 +4,10 @@ InterviewGPT — Analytics API Router
 
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from database import get_db
-from database.models import User
-from auth.dependencies import get_current_user, get_current_admin
-from analytics.service import get_dashboard_data, get_admin_stats
+from backend.database import get_db
+from backend.database.models import User
+from backend.auth.dependencies import get_current_user, get_current_admin
+from backend.analytics.service import get_dashboard_data, get_admin_stats
 
 router = APIRouter(prefix="/analytics", tags=["Analytics"])
 

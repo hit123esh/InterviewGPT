@@ -21,7 +21,7 @@ def get_whisper_model():
     if _model is None:
         try:
             from faster_whisper import WhisperModel
-            from config import get_settings
+            from backend.config import get_settings
             settings = get_settings()
             _model = WhisperModel(
                 settings.WHISPER_MODEL_SIZE,

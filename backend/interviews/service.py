@@ -8,10 +8,10 @@ from uuid import UUID
 from datetime import datetime
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
-from database.models import Interview, InterviewQuestion, Report
-from interviews.schemas import InterviewCreate
-from llm.agent import start_interview, submit_answer, end_interview_early, calculate_max_questions
-from resumes.service import get_active_resume, get_resume_by_id
+from backend.database.models import Interview, InterviewQuestion, Report
+from backend.interviews.schemas import InterviewCreate
+from backend.llm.agent import start_interview, submit_answer, end_interview_early, calculate_max_questions
+from backend.resumes.service import get_active_resume, get_resume_by_id
 
 
 async def create_interview(

@@ -5,14 +5,14 @@ InterviewGPT — Interview API Router
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from uuid import UUID
-from database import get_db
-from database.models import User
-from auth.dependencies import get_current_user
-from interviews.schemas import (
+from backend.database import get_db
+from backend.database.models import User
+from backend.auth.dependencies import get_current_user
+from backend.interviews.schemas import (
     InterviewCreate, InterviewResponse, InterviewListResponse,
     AnswerSubmit, QuestionResponse, InterviewQuestionResponse,
 )
-from interviews.service import (
+from backend.interviews.service import (
     create_interview, start_interview_session, process_answer,
     end_interview, get_user_interviews, get_interview_by_id,
     get_interview_questions,

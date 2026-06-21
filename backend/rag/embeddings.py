@@ -7,8 +7,8 @@ Handles embedding generation and storage in ChromaDB.
 import logging
 from typing import Optional
 import chromadb
-from config import get_settings
-from rag.chunking import chunk_resume_text
+from backend.config import get_settings
+from backend.rag.chunking import chunk_resume_text
 
 logger = logging.getLogger(__name__)
 settings = get_settings()

@@ -7,7 +7,7 @@ to retrieve relevant context for interview question generation.
 
 import logging
 from typing import List, Optional
-from rag.embeddings import get_chroma_client
+from backend.rag.embeddings import get_chroma_client
 
 logger = logging.getLogger(__name__)
 

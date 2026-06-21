@@ -4,17 +4,17 @@ InterviewGPT — Auth API Router
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
-from database import get_db
-from database.models import User
-from auth.schemas import (
+from backend.database import get_db
+from backend.database.models import User
+from backend.auth.schemas import (
     UserRegister, UserLogin, TokenResponse,
     TokenRefresh, UserResponse
 )
-from auth.service import (
+from backend.auth.service import (
     create_user, authenticate_user, get_user_by_email,
     create_access_token, create_refresh_token, decode_token
 )
-from auth.dependencies import get_current_user
+from backend.auth.dependencies import get_current_user
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 

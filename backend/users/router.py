@@ -5,11 +5,11 @@ InterviewGPT — Users API Router
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from uuid import UUID
-from database import get_db
-from database.models import User
-from users.schemas import UserResponse, UserUpdate
-from users.service import get_all_users, update_user_role
-from auth.dependencies import get_current_user, get_current_admin
+from backend.database import get_db
+from backend.database.models import User
+from backend.users.schemas import UserResponse, UserUpdate
+from backend.users.service import get_all_users, update_user_role
+from backend.auth.dependencies import get_current_user, get_current_admin
 
 router = APIRouter(prefix="/users", tags=["Users"])
 

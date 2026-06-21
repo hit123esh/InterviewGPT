@@ -18,15 +18,15 @@ from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, System
 from langgraph.graph import StateGraph, END
 from langgraph.graph.message import add_messages
 
-from config import get_settings
-from llm.prompts import (
+from backend.config import get_settings
+from backend.llm.prompts import (
     QUESTION_GENERATOR_PROMPT,
     ANSWER_EVALUATOR_PROMPT,
     REPORT_GENERATOR_PROMPT,
     get_eval_criteria,
     get_company_context,
 )
-from rag.retriever import get_resume_context_string
+from backend.rag.retriever import get_resume_context_string
 
 logger = logging.getLogger(__name__)
 settings = get_settings()
@@ -170,6 +170,7 @@ class SafeLLM:
             return await self.mock_llm.ainvoke(messages)
 
 import httpx
+import asyncio
 
 class OllamaResponse:
     def __init__(self, content: str):
@@ -194,21 +195,51 @@ class OllamaLLM:
                     role = "system"
                 ollama_messages.append({"role": role, "content": msg.content})
 
-        async with httpx.AsyncClient(timeout=60.0) as client:
-            response = await client.post(
-                f"{self.url}/api/chat",
-                json={
-                    "model": self.model,
-                    "messages": ollama_messages,
-                    "stream": False
-                }
-            )
-            if response.status_code == 200:
+        # Retry loop with exponential backoff to handle transient Ollama errors
+        last_exc = None
+        for attempt in range(3):
+            try:
+                async with httpx.AsyncClient(timeout=60.0) as client:
+                    response = await client.post(
+                        f"{self.url}/api/chat",
+                        json={
+                            "model": self.model,
+                            "messages": ollama_messages,
+                            "stream": False,
+                        },
+                    )
+
+                if response.status_code != 200:
+                    last_exc = Exception(f"Ollama returned status {response.status_code}: {response.text}")
+                    raise last_exc
+
                 data = response.json()
-                content = data.get("message", {}).get("content", "")
+                content = ""
+
+                # Support several possible Ollama response shapes
+                if isinstance(data, dict):
+                    if "message" in data and isinstance(data["message"], dict):
+                        content = data["message"].get("content", "")
+                    elif "choices" in data and data["choices"]:
+                        choice = data["choices"][0]
+                        if isinstance(choice, dict):
+                            content = (
+                                (choice.get("message") or {}).get("content")
+                                if isinstance(choice.get("message"), dict)
+                                else choice.get("content", "")
+                            )
+                    elif "output" in data and isinstance(data["output"], list) and data["output"]:
+                        first = data["output"][0]
+                        content = first.get("content", "") if isinstance(first, dict) else str(first)
+
                 return OllamaResponse(content)
-            else:
-                raise Exception(f"Ollama returned status code {response.status_code}: {response.text}")
+
+            except Exception as e:
+                last_exc = e
+                if attempt < 2:
+                    await asyncio.sleep(2 ** attempt)
+                    continue
+                raise
 
 def get_llm():
     mock = MockLLM()

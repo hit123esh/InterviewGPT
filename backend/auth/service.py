@@ -10,9 +10,9 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from database.models import User
-from auth.schemas import UserRegister
-from config import get_settings
+from backend.database.models import User
+from backend.auth.schemas import UserRegister
+from backend.config import get_settings
 
 settings = get_settings()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

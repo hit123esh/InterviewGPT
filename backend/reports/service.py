@@ -7,7 +7,7 @@ from __future__ import annotations
 from uuid import UUID
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from database.models import Report, Interview, InterviewQuestion
+from backend.database.models import Report, Interview, InterviewQuestion
 
 
 async def get_report_by_interview(db: AsyncSession, interview_id: UUID, user_id: UUID) -> Report | None:

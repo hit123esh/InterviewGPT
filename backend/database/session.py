@@ -4,17 +4,16 @@ InterviewGPT — Database Session Management
 
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
-from config import get_settings
+from backend.config import get_settings
 
 settings = get_settings()
 
-engine = create_async_engine(
-    settings.DATABASE_URL,
-    echo=settings.DEBUG,
-    pool_size=20,
-    max_overflow=10,
-    pool_pre_ping=True,
-)
+# Ensure the DATABASE_URL uses an async driver when using SQLAlchemy asyncio
+db_url = settings.DATABASE_URL
+if db_url.startswith("postgresql://") and "+asyncpg" not in db_url:
+    db_url = db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+
+engine = create_async_engine(db_url, echo=settings.DEBUG)
 
 AsyncSessionLocal = async_sessionmaker(
     engine,
@@ -42,5 +41,6 @@ async def get_db() -> AsyncSession:
 
 async def init_db():
     """Create all tables (for development only, use Alembic in production)."""
+    from backend.database import models  # Import to register models with Base
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)

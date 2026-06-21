@@ -6,12 +6,12 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import FileResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from uuid import UUID
-from database import get_db
-from database.models import User
-from auth.dependencies import get_current_user
-from reports.schemas import ReportResponse
-from reports.service import get_report_by_interview, get_user_reports
-from reports.pdf_generator import generate_pdf_report
+from backend.database import get_db
+from backend.database.models import User
+from backend.auth.dependencies import get_current_user
+from backend.reports.schemas import ReportResponse
+from backend.reports.service import get_report_by_interview, get_user_reports
+from backend.reports.pdf_generator import generate_pdf_report
 
 router = APIRouter(prefix="/reports", tags=["Reports"])
 
@@ -73,7 +73,7 @@ async def download_pdf_report(
         "overall_grade": report.overall_grade,
     }
 
-    from interviews.service import get_interview_by_id
+    from backend.interviews.service import get_interview_by_id
     interview = await get_interview_by_id(db, interview_id, current_user.id)
     interview_data = {
         "target_role": interview.target_role if interview else "",

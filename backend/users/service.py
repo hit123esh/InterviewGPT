@@ -7,7 +7,7 @@ from __future__ import annotations
 from uuid import UUID
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
-from database.models import User
+from backend.database.models import User
 
 
 async def get_all_users(db: AsyncSession, skip: int = 0, limit: int = 50):

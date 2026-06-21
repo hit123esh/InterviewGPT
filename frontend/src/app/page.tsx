@@ -39,7 +39,7 @@ const features = [
     icon: Brain,
     title: "AI Interviewer Agent",
     description:
-      "Powered by Gemini AI with LangGraph for realistic, adaptive interview conversations with follow-up questions.",
+      "Powered by local Ollama LLM with LangGraph for realistic, adaptive interview conversations with follow-up questions.",
     color: "text-violet-600",
     bg: "bg-violet-50",
   },

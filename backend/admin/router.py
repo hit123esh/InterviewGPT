@@ -5,13 +5,13 @@ InterviewGPT — Admin API Router
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from uuid import UUID
-from database import get_db
-from database.models import User
-from auth.dependencies import get_current_admin
-from users.schemas import UserResponse
-from users.service import get_all_users, update_user_role
-from analytics.service import get_admin_stats
-from interviews.service import get_user_interviews
+from backend.database import get_db
+from backend.database.models import User
+from backend.auth.dependencies import get_current_admin
+from backend.users.schemas import UserResponse
+from backend.users.service import get_all_users, update_user_role
+from backend.analytics.service import get_admin_stats
+from backend.interviews.service import get_user_interviews
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -66,7 +66,7 @@ async def get_all_interviews(
 ):
     """List all interview sessions (admin only)."""
     from sqlalchemy import select
-    from database.models import Interview
+    from backend.database.models import Interview
     result = await db.execute(
         select(Interview).order_by(Interview.created_at.desc()).offset(skip).limit(limit)
     )

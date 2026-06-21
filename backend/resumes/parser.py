@@ -66,7 +66,7 @@ async def parse_resume_with_ai(raw_text: str) -> dict:
     Use LLM to extract structured data from resume text.
     Returns: { name, skills, education, experience, projects, certifications }
     """
-    from llm.agent import get_llm
+    from backend.llm.agent import get_llm
     import json
 
     llm = get_llm()

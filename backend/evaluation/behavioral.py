@@ -5,8 +5,8 @@ InterviewGPT — Behavioral Answer Evaluation (STAR Method)
 import json
 import logging
 from langchain_core.messages import HumanMessage
-from config import get_settings
-from llm.agent import get_llm
+from backend.config import get_settings
+from backend.llm.agent import get_llm
 
 logger = logging.getLogger(__name__)
 settings = get_settings()

@@ -6,9 +6,9 @@ Specialized evaluation for technical interview answers.
 
 import json
 import logging
-from llm.agent import get_llm
+from backend.llm.agent import get_llm
 from langchain_core.messages import HumanMessage
-from config import get_settings
+from backend.config import get_settings
 
 logger = logging.getLogger(__name__)
 settings = get_settings()
