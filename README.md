@@ -1,24 +1,24 @@
-# InterviewGPT 🚀
+# InterviewGPT 
 
 An end-to-end, AI-powered mock interview platform that simulates real-world hiring loops. Using LLMs, vector search, automatic speech recognition (ASR), and structured evaluation techniques, InterviewGPT evaluates candidate resumes, conducts adaptive oral/technical/coding interviews, and provides comprehensive performance analytics.
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-- **📄 AI-Powered Resume Parser**: Extracts structured profiles (skills, experience, projects, education) from PDF and DOCX uploads using PDFPlumber/PyPDF2 and LLM-driven schema parsing.
-- **🎯 Multi-Disciplinary Interview Tracks**: Configurable mock sessions tailored to:
+- ** AI-Powered Resume Parser**: Extracts structured profiles (skills, experience, projects, education) from PDF and DOCX uploads using PDFPlumber/PyPDF2 and LLM-driven schema parsing.
+- ** Multi-Disciplinary Interview Tracks**: Configurable mock sessions tailored to:
   - **HR & Behavioral**: Assessed using the **STAR Method** (Situation, Task, Action, Result).
   - **Technical Q&A**: Knowledge-based questions mapped to resume skills and targeted roles.
   - **Data Structures & Algorithms (DSA)**: Coding environment with syntax check and complexity analysis.
   - **System Design**: Architecture and scalability discussion.
   - **Project Discussion**: Deep dive into resume projects.
-- **🎙️ Speech-to-Text (ASR) Integration**: Voice answer support transcribed in real-time using **Faster Whisper**.
-- **🧠 Semantic Retrieval & RAG**: Vectorizes parsed resume data and stores it in **ChromaDB** to enable hyper-personalized, context-aware interview questions.
-- **📊 Professional Grading & Analytics**: Generates detailed candidate feedback reports, covering communication skills, technical capabilities, improvement areas, and custom learning paths, complete with downloadable **PDF Reports**.
-- **🐳 Dockerized Orchestration**: Streamlined local setup utilizing `docker-compose` for the frontend, backend, database, and vector store.
+- ** Speech-to-Text (ASR) Integration**: Voice answer support transcribed in real-time using **Faster Whisper**.
+- ** Semantic Retrieval & RAG**: Vectorizes parsed resume data and stores it in **ChromaDB** to enable hyper-personalized, context-aware interview questions.
+- ** Professional Grading & Analytics**: Generates detailed candidate feedback reports, covering communication skills, technical capabilities, improvement areas, and custom learning paths, complete with downloadable **PDF Reports**.
+- ** Dockerized Orchestration**: Streamlined local setup utilizing `docker-compose` for the frontend, backend, database, and vector store.
 
-## 🛠️ Detailed Tech Stack
+##  Detailed Tech Stack
 
 ### Frontend Architecture
 - **Framework**: **Next.js (React 19)** (App Router) — Provides server-side rendering, optimized page routing, and high performance for the candidate dashboards.
@@ -45,7 +45,7 @@ An end-to-end, AI-powered mock interview platform that simulates real-world hiri
 
 ---
 
-## 🗂️ Project Structure in Detail
+##  Project Structure in Detail
 
 ```text
 ├── backend/                             # FastAPI Backend Service
@@ -114,7 +114,7 @@ An end-to-end, AI-powered mock interview platform that simulates real-world hiri
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 Make sure you have the following installed on your machine:
@@ -198,7 +198,7 @@ docker compose up -d db chromadb
 
 ---
 
-## 🛢️ Database Migrations
+##  Database Migrations
 
 This project uses Prisma to manage schemas and database clients:
 
@@ -213,7 +213,7 @@ This project uses Prisma to manage schemas and database clients:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository.
 2. Create your feature branch (`git checkout -b feature/amazing-feature`).
